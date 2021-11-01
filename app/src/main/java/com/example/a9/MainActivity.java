@@ -3,6 +3,7 @@ package com.example.a9;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -116,36 +117,36 @@ public class MainActivity extends AppCompatActivity {
     }
     private void setImage(final ImageView imageView, final String value){
         runOnUiThread(new Runnable() {
+            @SuppressLint("UseCompatLoadingForDrawables")
             @Override
             public void run() {
                 switch (value){
                     case "01d": imageView.setImageDrawable(getResources().getDrawable(R.drawable.icon1));
                         break;
-                    case "01n": imageView.setImageDrawable(getResources().getDrawable(R.drawable.icon2));
+                    case "01n":
+                    case "02d":
+                    case "02n":
+                        imageView.setImageDrawable(getResources().getDrawable(R.drawable.icon2));
                         break;
-                    case "02d": imageView.setImageDrawable(getResources().getDrawable(R.drawable.icon2));
+                    case "03d":
+                    case "03n":
+                        imageView.setImageDrawable(getResources().getDrawable(R.drawable.icon3));
                         break;
-                    case "02n": imageView.setImageDrawable(getResources().getDrawable(R.drawable.icon2));
+                    case "04d":
+                    case "04n":
+                        imageView.setImageDrawable(getResources().getDrawable(R.drawable.icon4));
                         break;
-                    case "03d": imageView.setImageDrawable(getResources().getDrawable(R.drawable.icon3));
+                    case "09d":
+                    case "09n":
+                        imageView.setImageDrawable(getResources().getDrawable(R.drawable.icon5));
                         break;
-                    case "03n": imageView.setImageDrawable(getResources().getDrawable(R.drawable.icon3));
+                    case "10d":
+                    case "10n":
+                        imageView.setImageDrawable(getResources().getDrawable(R.drawable.icon6));
                         break;
-                    case "04d": imageView.setImageDrawable(getResources().getDrawable(R.drawable.icon4));
-                        break;
-                    case "04n": imageView.setImageDrawable(getResources().getDrawable(R.drawable.icon4));
-                        break;
-                    case "09d": imageView.setImageDrawable(getResources().getDrawable(R.drawable.icon5));
-                        break;
-                    case "09n": imageView.setImageDrawable(getResources().getDrawable(R.drawable.icon5));
-                        break;
-                    case "10d": imageView.setImageDrawable(getResources().getDrawable(R.drawable.icon6));
-                        break;
-                    case "10n": imageView.setImageDrawable(getResources().getDrawable(R.drawable.icon6));
-                        break;
-                    case "11d": imageView.setImageDrawable(getResources().getDrawable(R.drawable.icon7));
-                        break;
-                    case "11n": imageView.setImageDrawable(getResources().getDrawable(R.drawable.icon7));
+                    case "11d":
+                    case "11n":
+                        imageView.setImageDrawable(getResources().getDrawable(R.drawable.icon7));
                         break;
                     default:
                         imageView.setImageDrawable(getResources().getDrawable(R.drawable.weather));
